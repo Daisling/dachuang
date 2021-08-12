@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>起始页面</title>
+</head>
+<body>
+{% extends "bootstrap/base.html" %}
+<div class="navbar navbar-fixed-top">
+  <!-- 这个后期应该能加东西，不太了解 -->
+</div>
+{% block content %}
+   <div class="container">
+     <div class="jumbotron">
+        <h1>欢迎来到分类网站</h1>
+         <div style="margin_top:20px;"><h2>请选择模型</h2></div>
+           <form method="POST">
+              <input type="submit"  value="cifar10" class="btn btn-info btn-block btn-lg" style="margin-top:200px" formaction="/cifar10model"><br/>
+           </form>
+     </div>
+  </div>
+
+{% endblock %}
+</body>
+</html>
