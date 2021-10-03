@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cifar10模型起始页</title>
+    <script type="text/javascript" src="{{ url_for('static',filename='js/jquery-3.6.0.js') }}" ></script>
+    <script >
+       $(document).ready(function(){
+       $("#notify").click(function(){
+
+        alert("图片上传成功！");
+       });
+      });
+
+   </script>
+</head>
+<body>
+
+{% extends "bootstrap/base.html" %}
+{% block content %}
+<div class="container">
+     <div class="jumbotron">
+        <h1>这是cifar10模型</h1>
+         <div style="margin_top:20px;"><h2>上传您想标注的图片</h2></div>
+
+          <form action="/uploadcifar10picture" enctype='multipart/form-data' method='POST'>
+             <input type="file" name="file" style="margin-top:300px;margin-left:400px" multiple="multiple" />
+
+             <input type="submit" id="notify" value="上传"  class="btn btn-danger btn-lg btn-block" style="margin-top:50px;"/>
+           </form>
+
+           <form action="/begintoexersize" enctype='multipart/form-data' method='POST'>
+             <input type="submit" value="开始预测" class="btn btn-danger btn-lg btn-block" style="margin-top:50px;"/>
+
+           </form>
+
+     </div>
+  </div>
+{% endblock %}
+
+</body>
+</html>
