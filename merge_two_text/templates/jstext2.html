@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+<!--        <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">-->
+        <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+        <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!--        <style>-->
+<!--            #div_add {-->
+<!--                background: #66b7f9;-->
+<!--                color: #ffffff;-->
+<!--                border: none;-->
+<!--                display: block;-->
+<!--                height: 30px;-->
+<!--                margin: 20px 0;-->
+<!--            }-->
+
+<!--            #div_body p {-->
+<!--                height: 40px;-->
+<!--                border: 1px solid #c0c0c0;-->
+<!--                line-height: 40px;-->
+<!--                text-align: center;-->
+<!--            }-->
+
+<!--            #div_body img {-->
+<!--                width: 18px;-->
+<!--                height: 18px;-->
+<!--                margin-top: 9px;-->
+<!--                float: right;-->
+<!--            }-->
+
+<!--            #div_body p:hover {-->
+<!--                background: #66b7f9;-->
+<!--                color: #ffffff;-->
+<!--            }-->
+
+<!--            .leftpage {-->
+<!--                height: 500px;-->
+<!--                background: #ffffff;-->
+<!--            }-->
+
+<!--            #adduse {-->
+<!--                display: none;-->
+<!--                width: 500px;-->
+<!--                height: 300px;-->
+<!--                border: 1px solid #c0c0c0;-->
+<!--                background: #ffffff;-->
+<!--                position: absolute;-->
+<!--                left: 50%;-->
+<!--                top: 20%;-->
+<!--            }-->
+
+<!--            #adduse p {-->
+<!--                padding-left: 15px;-->
+<!--            }-->
+
+<!--            .addusep {-->
+<!--                background: #f2f2f2;-->
+<!--                height: 30px;-->
+<!--                line-height: 30px;-->
+<!--                padding-left: 5px;-->
+<!--            }-->
+
+<!--            #adduse p:nth-child(2) {-->
+<!--                padding-top: 25px;-->
+<!--            }-->
+
+<!--            #adduse p:nth-child(6) {-->
+<!--                padding-bottom: 25px;-->
+<!--            }-->
+
+<!--            #cancle {-->
+<!--                margin-left: 66px;-->
+<!--                background: #428bca;-->
+<!--                color: #ffffff;-->
+<!--                border: none;-->
+<!--                width: 60px;-->
+<!--                height: 30px;-->
+<!--            }-->
+
+<!--            #save {-->
+<!--                margin-left: 36px;-->
+<!--                background: #428bca;-->
+<!--                color: #ffffff;-->
+<!--                border: none;-->
+<!--                width: 60px;-->
+<!--                height: 30px;-->
+<!--            }-->
+<!--        </style>-->
+    </head>
+
+    <body>
+        <!-- 左侧分页加载 -->
+        <div class="col-md-5  col-xs-5 leftpage">
+            <button id="div_add">添加</button>
+            <div id="div_body">
+
+            </div>
+
+            <!--添加界面-->
+            <form id="adduse">
+                <p class="addusep">新增车间</p>
+                <div class="">
+
+                    <p>
+                        车间名称: <input type="text" placeholder="请输入车间名称" />
+                    </p>
+                    <p>菜单选项</p>
+                    <p>
+                        <input type="radio" />接待区域
+                    </p>
+                    <p>
+                        <input type="radio" />提车区域
+                    </p>
+                    <p>
+                        <input type="radio" />维修区域
+                    </p>
+
+                    <input type="button" value="取消" id="cancle" /> <input type="button" value="保存" id="save" />
+                </div>
+
+            </form>
+        </div>
+    </body>
+    <script>
+        $("#div_add").click(function() {
+            $('#adduse').show();
+        })
+
+        $("#cancle").click(function() {
+            $('#adduse').hide();
+        })
+        $("#save").click(function() {
+            $('#adduse').hide();
+            $("#div_body").append("<p class='status'>钣金<img onclick='delRow(this)'  src='img/delete.png'/></p>")
+        })
+
+        /* 删除 */
+        function delRow(obj) {
+            $(obj).parent().remove();
+            alert("删除成功")
+
+        }
+    </script>
+</html>

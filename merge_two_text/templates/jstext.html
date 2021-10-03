@@ -1,0 +1,32 @@
+<html>
+<head>
+    <script type="text/javascript" src="{{ url_for('static',filename='js/jquery-3.6.0.js') }}" ></script>
+    <script type = "text/javascript" src="{{ url_for('static',filename='js/main.js') }}"></script>
+   <script >
+       $(document).ready(function(){
+       $("#notify").click(function(){
+    alert('上传成功！');
+  });
+});
+
+   </script>
+</head>
+<body>
+<form class="formXXX1" method="post">
+<br class="formXXX2" />
+<div class="form-group">
+<label for="
+telephone14">手机号: <input class="form1" type="iphone" id="a" name="a" maxlength="11" placeholder="请输入11位合法手机号" /> </label>
+</div>
+<div class="example-box">
+<label> 环境:</label>
+<label class="radio"> <input type="radio" id="b" name="b" value="0" checked="" /><span>b1</span> </label>
+<label class="radio"> <input type="radio" id="b" name="b" value="1" /><span>b2</span> </label>
+</div>
+<br />
+<div class="form-group">
+<button class="btn btn-primary" type="button" id="notify">提交</button>
+</div>
+</form>
+</body>
+</html>

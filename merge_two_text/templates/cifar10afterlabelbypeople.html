@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cifar10人工标注后的页面</title>
+</head>
+<body>
+{% extends "bootstrap/base.html" %}
+
+{% block content %}
+<h1 class="text-center">cifar10人工标注完成页面</h1>
+<div class="row">
+    <div class="col-sm-6 col-md-3">
+         <div class="thumbnail">
+            <img src=""
+             alt="通用的占位符缩略图">
+            <div class="caption">
+                <h3>人工标注结果为</h3>
+                <h2>{{ label }}</h2>
+            </div>
+         </div>
+    </div>
+    <div class="col-sm-6 col-md-3">
+        <div class="thumbnail">
+            <img src="static/girl.jpg"
+            alt="通用的占位符缩略图">
+            <div class="caption">
+                 <h3>人工标注结果为</h3>
+                <h2>{{ label }}</h2>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-3">
+        <div class="thumbnail">
+            <img src="static/girl.jpg"
+            alt="通用的占位符缩略图">
+            <div class="caption">
+                 <h3>人工标注结果为</h3>
+                <h2>{{ label }}</h2>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-3">
+        <div class="thumbnail">
+            <img src="static/girl.jpg"
+            alt="通用的占位符缩略图">
+            <div class="caption">
+                <h3>人工标注结果为</h3>
+                <p></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<form action="" enctype='multipart/form-data' method='POST'>
+        <input type="file" name="file" style="margin-top:20px;margin-left:800px" multiple="multiple"/>
+        <input type="submit"  value="继续使用cifar10模型上传" class="btn btn-info btn-block" style="margin-top:20px" formaction="/uploadcifar10picture"><br/>
+        <input type="submit"  value="改用mnist模型上传" class="btn btn-info btn-block" formaction="/uploadmnistpicture"><br/>
+</form>
+
+{% endblock %}
+</body>
+</html>
